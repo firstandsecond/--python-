@@ -1,0 +1,17 @@
+def SelectionSort(lis):
+    j = 0 
+    while(j<len(lis)-1):
+        i = j
+        temp = j
+        while(i<len(lis)-1):
+            if(lis[i] < lis[i+1]):
+                if(lis[i]<lis[temp]):
+                    temp = i
+            if(lis[i] > lis[i+1]):
+                if(lis[i+1]<lis[temp]):
+                        temp = i + 1
+            i = i + 1 
+        lis[j],lis[temp] = lis[temp],lis[j]       
+        j = j + 1
+    print(lis) 
+SelectionSort(lis=[9,2,1,8,7,5,3,4])   
