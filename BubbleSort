@@ -1,0 +1,14 @@
+def c_sort(lis):
+    j = 0 
+    while(j<len(lis)-1):
+        i = j
+        while(i<len(lis)-1):
+            if(lis[i] > lis[i+1]):
+                lis[i] ,lis[i+1]=lis[i+1] ,lis[i]
+            i = i + 1 
+        if(lis[j]>lis[j+1]):
+            i = j
+        else:
+            j = j + 1
+    print(lis)
+c_sort(lis=[9,2,1,8,7,5,3,4]) 
