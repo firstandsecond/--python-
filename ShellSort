@@ -1,0 +1,15 @@
+#Shell排序在确定gap后，采用两两比较方式排序
+ 
+def ShellSort(lis):
+  n = len(lis)
+  gap = n // 2
+  while(gap >= 1):
+      i = gap
+      for i in range(gap,n):
+          while(i>=gap and lis[i-gap] > lis[i]):
+              lis[i-gap],lis[i] = lis[i],lis[i-gap]
+              i = i - gap
+      gap = gap // 2
+  print(lis)      
+
+ShellSort(lis=[9,2,1,8,7,5,3,6,4])   
