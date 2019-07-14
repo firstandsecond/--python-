@@ -1,0 +1,20 @@
+#快排用时最久，最终参考GitHub大佬的代码写出来的
+
+def part(lis,low,high):
+    left = low
+    for i in range(low,high):
+        if(lis[i] <= lis[high]):
+            lis[left],lis[i] = lis[i],lis[left]
+            left = left + 1
+    lis[left],lis[high] = lis[high],lis[left]
+    return left
+def QuickSort(lis,low,high):
+    if(low<high):
+        k = part(lis,low,high)
+        QuickSort(lis,low,k-1)
+        QuickSort(lis,k+1,high)
+lis = [6,12,9,8,2,5,13,16,4]
+low = 0
+high = len(lis)-1
+QuickSort(lis,low,high)
+print(lis)
